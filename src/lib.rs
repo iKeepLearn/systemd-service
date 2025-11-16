@@ -15,7 +15,7 @@
 //!
 //! ```no_run
 //!
-//! use systemd_service::{ServiceConfig, SystemdService, Error, is_root};
+//! use systemd_service::{ServiceConfig, SystemdService, Error};
 //!
 //! fn setup_my_service() -> Result<(), Error> {
 //!     // 1. Define the service configuration using the builder
@@ -438,7 +438,7 @@ mod tests {
 
     #[test]
     fn test_minimal_service() {
-        let config = ServiceConfig::new("minimal", "Minimal Service", "/usr/bin/sleep infinity");
+        let config = ServiceConfig::new("minimal", "/usr/bin/sleep infinity", "Minimal Service");
 
         let systemd = SystemdService::new(config);
         let service_content = systemd.generate();

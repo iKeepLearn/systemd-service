@@ -17,7 +17,7 @@
 
  ```rust
 
- use systemd_service::{ServiceConfig, SystemdService, Error, is_root};
+ use systemd_service::{ServiceConfig, SystemdService, Error};
 
  fn setup_my_service() -> Result<(), Error> {
      // 1. Define the service configuration using the builder
