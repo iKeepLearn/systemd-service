@@ -1,0 +1,12 @@
+[package]
+name = "systemd-service"
+version = "0.1.0"
+edition = "2024"
+authors = ["cc@artista.cc"]
+keywords = ["systemd", "daemon", "system"]
+categories = ["os"]
+description = "Generate service files for the application"
+license = "MIT"
+repository = "https://github.com/ikeeplearn/systemd-service"
+
+[dependencies]
