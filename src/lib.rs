@@ -219,9 +219,6 @@ impl SystemdService {
 
         // [Service] section
         content.push_str("[Service]\n");
-        // Note: The code appends " run" unconditionally. This might be specific
-        // to the original author's use case.
-        content.push_str(&format!("ExecStart={}\n", self.config.exec_start));
 
         if let Some(working_directory) = &self.config.working_directory {
             content.push_str(&format!("WorkingDirectory={}\n", working_directory));
@@ -242,6 +239,8 @@ impl SystemdService {
         if let Some(restart_sec) = self.config.restart_sec {
             content.push_str(&format!("RestartSec={}\n", restart_sec));
         }
+
+        content.push_str(&format!("ExecStart={}\n", self.config.exec_start));
 
         if let Some(log_file) = &self.config.log_file {
             content.push_str(&format!("StandardOutput=append:{}\n", log_file));

@@ -1,6 +1,6 @@
 [package]
 name = "systemd-service"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2024"
 authors = ["cc@artista.cc"]
 keywords = ["systemd", "daemon", "system"]
